@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+<title>osm homepage</title>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+</head>
+
+<body>
+	<div id="map" ></div>
+	
+	<div id="mode_title">
+		<img id="mode_image" src="../images/mode.png" alt="" width="200px" height="30px" >
+	</div>
+	
+	<div id="source_title">
+		<img id="sourse_image" src="../images/sourse.png" alt="" width="200px" height="30px" >
+	</div>
+
+	<div id="back"> 
+		<a href="../index.html"> <img id="back_image" src="../images/back.png" alt="" width="75px" height="75px" > </a>
+	</div>
+	
+	
+	
+	<div id ="select_mode">
+		<select name="mode" id="mode">
+			<option value="Profile" selected="selected">Profile</option>
+			<option value="Radius">Radius</option>
+		</select>
+	</div>
+	
+	<div id ="select_source">
+		<select name="source" id="source">
+			<option value="ALL" selected="selected">ALL</option>
+			<option value="Airbox">Airbox</option>
+			<option value="LASS">LASS</option>
+			<option value="EPA">EPA</option>
+		</select>
+	</div>
+	
+	<div id="slider_scroll_4">
+		<div id="slider_tab_4">
+			<span>詳細資訊</span>
+		</div>
+		
+		<div id="top">
+			<div id="name">名稱:</div>
+			<div id="info">PM2.5:   氣溫:    濕度:   </div>
+		</div>
+		
+		<div id="select-window">
+			<div>
+				<input type="radio" name="select" id="timeseries" value = "timeseries" checked="checked"/>
+				<label for="timeseries"><span></span>Time Series</label>
+			</div>
+			<div>
+				<input type="radio" name="select" id="average_max_min" value = "average_max_min"/>
+				<label for="average_max_min"><span></span>Average/Max/Min</label>
+			</div>
+			<div>
+				<input type="radio" name="select" id="motif" value = "motif"/>
+				<label for="motif"><span></span>Motif</label>
+			</div>
+		</div>
+		
+		<div id="select-input-parameter">
+			<div id="same">
+				<div id="startdate">
+					Start &nbsp; Date: &emsp;&emsp;
+					<input type = "text" id = "startdate_input">
+				</div>
+				<br>
+				<div id="enddate">
+					End &nbsp;&nbsp; Date: &emsp;&emsp;
+					<input type = "text" id = "enddate_input">
+				</div>
+			</div>
+			<br>
+			<div id="different_motif">
+				<div id="querylength">
+					Query Length: &nbsp;&nbsp;&nbsp;
+					<select name="querylength" id="querylength_input">
+						<option value="12" selected="selected">12 (1 hour)</option>
+						<option value="24">24 (2 hours)</option>
+						<option value="36">36 (3 hours)</option>
+						<option value="48">48 (4 hours)</option>
+						<option value="60">60 (5 hours)</option>
+						<option value="72">72 (6 hours)</option>
+					</select>
+				</div>
+				<br>
+				<div id="lowerlimitofthenumberofsinglemotif">
+					Lower Limit Of The Number <br>
+					Of Single Motif: &nbsp;
+					<select name="lowerlimitofthenumberofsinglemotif" id="lowerlimitofthenumberofsinglemotif_input">
+						<option value="2" selected="selected">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+					</select>
+				</div>
+			</div>
+			<div id="different_average_max_min">
+				<div id="timemode">
+					Time Mode: &nbsp;&nbsp;
+					<select name="timemode" id="timemode_input">
+						<option value="day" selected="selected">day</option>
+						<option value="hour">hour</option>
+					</select>
+				</div>
+			</div>
+			<div>
+				<br>
+				<input type="button" id="go" value="Go!">
+			</div>
+		</div>
+			
+		<div id="slider_content_4">						
+			<div id ="detail_information" ></div>
+		</div>
+		
+	
+	</div>
+	
+	
+	<div id="slider_scroll_5">
+		<div id="slider_tab_5">
+			<span>指標對照表</span>
+		</div>
+		<div id="slider_content_5">						
+			<div id ="level_information" style="width: 75%; height: 300px;" ></div>
+		</div>
+		
+
+	</div>
+
+	
+	
+</body>
+
+<!-- css -->
+<link href="../layout/slide_window.css" rel="stylesheet" type="text/css" media="all">
+<link href="../layout/osm.css" rel="stylesheet" type="text/css" media="all">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" rel="stylesheet"/>
+<link href="../layout/metricsgraphics.css" rel="stylesheet" type="text/css" media="all" />
+
+<!-- javascript -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script> 
+<script type='text/javascript' src="https://d3js.org/d3.v4.min.js"></script>
+<script type='text/javascript' src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type='text/javascript' src="../javascript/metricsgraphics.js"></script>
+<script type='text/javascript' src="../javascript/slide_window.js"></script>
+<script type='text/javascript' src="../javascript/osm.js"></script>   
+
+
+
+
+</html>
+            
+        
+        
+           
+            
+
+        

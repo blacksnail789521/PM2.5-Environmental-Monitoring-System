@@ -1,0 +1,58 @@
+@charset "utf-8";
+/*
+Template Name: Revelation
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+File: Framework CSS
+*/
+
+html{overflow-y:scroll;}
+body{margin:0; padding:0; font-size:13px; font-family:Georgia, "Times New Roman", Times, serif;}
+
+.clear::after{content:"."; display:block; height:0; clear:both; visibility:hidden; line-height:0;}
+.clear{display:block; clear:both;}
+html[xmlns] .clear{display:block;}
+* html .clear{height:1%;}
+
+a{outline:none; text-decoration:none;}
+
+.fl_left, .imgl{float:left;}
+.fl_right, .imgr{float:right;}
+
+/*img{width:auto; max-width:100%; height:auto; margin:0; padding:0; border:none; line-height:normal; vertical-align:middle;}*/
+.imgholder, .imgl, .imgr{padding:4px; border:1px solid; text-align:center;}
+.imgl{margin:0 15px 15px 0; clear:left;}
+.imgr{margin:0 0 15px 15px; clear:right;}
+
+
+/* Generalise
+-----------------------------------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6, .heading{margin:0; padding:0; font-size:18px; font-weight:normal; line-height:normal;}
+
+address{font-style:normal;}
+
+.wrapper{display:block; width:100%; margin:0; padding:0; text-align:left; word-wrap:break-word;}
+#topbar, #header, #breadcrumb, #container, #footer, #copyright{display:block; width:1160px; margin:0 auto;}
+
+
+/* HTML 5 Overrides
+-----------------------------------------------------------------------------------*/
+address, article, aside, figcaption, figure, footer, header, main, nav, section{display:block; margin:0; padding:0;}
+
+
+/* Grid
+-----------------------------------------------------------------------------------*/
+.one_quarter, .two_quarter, .three_quarter{display:block; float:left; margin:0 0 0 20px;}
+.one_quarter{width:225px;}
+.two_quarter{width:470px;}
+.three_quarter{width:715px;}
+
+.one_third, .two_third{display:block; float:left; margin:0 0 0 30px;}
+.one_third{width:300px;}
+.two_third{width:630px;}
+
+.first, .one_quarter:first-child, .two_quarter:first-child, .three_quarter:first-child, .one_third:first-child, .two_third:first-child{margin-left:0;}
+
+.first{clear:left;}
